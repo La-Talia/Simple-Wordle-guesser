@@ -14,8 +14,6 @@ def filt(letter, position, flag):
             if i[position] == letter:
                 nwords.append(i)
         words = nwords
-        print("--only kept where {0} has {1}. left:{2}".format(position,letter, len(words)))
-        print(fix)
     elif flag == '1':
         nwords = []
         nah = True
@@ -23,7 +21,6 @@ def filt(letter, position, flag):
             if letter in i and i[position]!=letter:
                 nwords.append(i)
         words = nwords
-        print("--only kept where {0} don't has {1}, but have it. left:{2}".format(position,letter, len(words)))
     elif nah == False:
         nfixpos=[]
         for o in range(5):
@@ -35,8 +32,6 @@ def filt(letter, position, flag):
                 if i[rpos]!=letter:
                     nwords.append(i)
             words=nwords
-        print("--removed all having {0}. left:{1}".format(letter, len(words)))
-        print(fix, nfixpos)
 
 def pro(trial, result):
     global words
@@ -49,6 +44,5 @@ def pro(trial, result):
 for _ in range(6):
     trial = random.choice(words)
     print(trial)
-    print("LEFT:", len(words))
-    result = input()
+    result = input("Enter result code:")
     pro(trial, result)
